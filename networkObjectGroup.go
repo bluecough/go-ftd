@@ -56,7 +56,7 @@ func (f *FTD) GetNetworkObjectGroups(limit int) ([]*NetworkObjectGroup, error) {
 	return v.Items, nil
 }
 
-func (f *FTD) getNetworkObjectGroupBy(filterString string) ([]*NetworkObjectGroup, error) {
+func (f *FTD) GetNetworkObjectGroupBy(filterString string) ([]*NetworkObjectGroup, error) {
 	var err error
 
 	filter := make(map[string]string)
@@ -108,7 +108,7 @@ func (f *FTD) CreateNetworkObjectGroup(n *NetworkObjectGroup, duplicateAction in
 	}
 
 	query := fmt.Sprintf("name:%s", n.Name)
-	obj, err := f.getNetworkObjectGroupBy(query)
+	obj, err := f.GetNetworkObjectGroupBy(query)
 	if err != nil {
 		if f.debug {
 			glog.Errorf("Error: %s\n", err)
