@@ -60,7 +60,7 @@ func (f *FTD) GetNetworkObjectGroupBy(filterString string) ([]*NetworkObjectGrou
 	var err error
 
 	filter := make(map[string]string)
-	filter["filter"] = filterString
+	filter["name"] = filterString
 
 	endpoint := "object/networkgroups"
 	data, err := f.Get(endpoint, filter)
