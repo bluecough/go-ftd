@@ -16,7 +16,6 @@ type NetworkObject struct {
 	Value           string `json:"value"`
 	IsSystemDefined bool   `json:"isSystemDefined,omitempty"`
 	Links           *Links `json:"links,omitempty"`
-        ID		string
 }
 
 // Reference Returns a reference object
