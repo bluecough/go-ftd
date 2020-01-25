@@ -108,7 +108,7 @@ func (f *FTD) CreateNetworkObjectGroup(n *NetworkObjectGroup, duplicateAction in
 	}
 
 	query := fmt.Sprintf("name:%s", n.Name)
-	obj, err := f.getNetworkObjectGroupBy(query)
+	obj, err := f.GetNetworkObjectGroupBy(query)
 	if err != nil {
 		if f.debug {
 			glog.Errorf("Error: %s\n", err)
