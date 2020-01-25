@@ -56,7 +56,7 @@ func (f *FTD) GetNetworkObjectGroups(limit int) ([]*NetworkObjectGroup, error) {
 	return v.Items, nil
 }
 
-func (f *FTD) getNetworkObjectGroupBy(filterString string) ([]*NetworkObjectGroup, error) {
+func (f *FTD) GetNetworkObjectGroupBy(filterString string) ([]*NetworkObjectGroup, error) {
 	var err error
 
 	filter := make(map[string]string)
