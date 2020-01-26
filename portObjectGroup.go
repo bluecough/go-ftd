@@ -58,7 +58,7 @@ func (f *FTD) GetPortObjectGroups(limit int) ([]*PortObjectGroup, error) {
 	return v.Items, nil
 }
 
-func (f *FTD) getPortObjectGroupBy(filterString string) ([]*PortObjectGroup, error) {
+func (f *FTD) GetPortObjectGroupBy(filterString string) ([]*PortObjectGroup, error) {
 	var err error
 
 	filter := make(map[string]string)
@@ -111,7 +111,7 @@ func (f *FTD) CreatePortObjectGroup(g *PortObjectGroup, duplicateAction int) err
 	}
 
 	query := fmt.Sprintf("name:%s", g.Name)
-	obj, err := f.getPortObjectGroupBy(query)
+	obj, err := f.GetPortObjectGroupBy(query)
 	if err != nil {
 		if f.debug {
 			glog.Errorf("Error: %s\n", err)
