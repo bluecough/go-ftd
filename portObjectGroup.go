@@ -24,7 +24,6 @@ func (p *PortObjectGroup) Reference() *ReferenceObject {
 		Name:    p.Name,
 		Version: p.Version,
 		Type:    p.Type,
-                Description: p.Description,
 	}
 
 	return &r
