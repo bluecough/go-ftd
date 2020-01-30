@@ -27,7 +27,7 @@ type AccessRule struct {
 	LogFiles            bool               `json:"logFiles,omitempty"`
 	SyslogServer        *ReferenceObject   `json:"syslogServer,omitempty"`
 	Links               *Links             `json:"links,omitempty"`
-	parent              string
+	Parent              string
 }
 
 // Reference Returns a reference object
