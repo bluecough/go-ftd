@@ -140,6 +140,33 @@ func (f *FTD) GetAccessPolicies(limit int) ([]*AccessPolicy, error) {
 	return v.Items, nil
 }
 
+func (f *FTD) GetAccessPoliciesby(filterstring string limit int) ([]*AccessPolicy, error) {
+	var err error
+
+	filter := make(map[string]string)
+	filter["filter"] = filterstring
+        filter["limit"] = strconv.Itoa(limit)
+
+	data, err := f.Get("policy/accesspolicies", filter)
+	if err != nil {
+		return nil, err
+	}
+
+	var v struct {
+		Items []*AccessPolicy `json:"items"`
+	}
+
+	err = json.Unmarshal(data, &v)
+	if err != nil {
+		if f.debug {
+			glog.Errorf("Error: %s\n", err)
+		}
+		return nil, err
+	}
+
+	return v.Items, nil
+}
+
 // ModifyAccessPolicy Modify access policy
 func (f *FTD) ModifyAccessPolicy(n *AccessPolicy, policy string) error {
 	var err error
