@@ -141,7 +141,7 @@ func (f *FTD) DeleteAccessRule(n *AccessRule) error {
 
 	return nil
 }
-func (f *FTD) DeleteAccessRule2(parent string, n *AccessRule) error {
+func (f *FTD) DeleteAccessRuleSpecial(parent string, n *AccessRule) error {
 	var err error
 
 	endpoint := fmt.Sprintf("policy/accesspolicies/%s/accessrules/%s", parent, n.ID)
