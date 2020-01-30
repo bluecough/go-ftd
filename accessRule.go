@@ -27,7 +27,7 @@ type AccessRule struct {
 	LogFiles            bool               `json:"logFiles,omitempty"`
 	SyslogServer        *ReferenceObject   `json:"syslogServer,omitempty"`
 	Links               *Links             `json:"links,omitempty"`
-	parent              string
+	Parent              string
 }
 
 // Reference Returns a reference object
@@ -121,7 +121,7 @@ func (f *FTD) CreateAccessRule(n *AccessRule, policy string) error {
 		return err
 	}
 
-	n.parent = policy
+	n.Parent = policy
 
 	return nil
 }
@@ -130,7 +130,7 @@ func (f *FTD) CreateAccessRule(n *AccessRule, policy string) error {
 func (f *FTD) DeleteAccessRule(n *AccessRule) error {
 	var err error
 
-	endpoint := fmt.Sprintf("policy/accesspolicies/%s/accessrules/%s", n.parent, n.ID)
+	endpoint := fmt.Sprintf("policy/accesspolicies/%s/accessrules/%s", n.Parent, n.ID)
 	err = f.Delete(endpoint)
 	if err != nil {
 		if f.debug {
