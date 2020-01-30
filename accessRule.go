@@ -141,6 +141,8 @@ func (f *FTD) DeleteAccessRule(n *AccessRule) error {
 
 	return nil
 }
+// DeleteAccessRuleSpecial
+/*
 func (f *FTD) DeleteAccessRuleSpecial(parent string, n *AccessRule) error {
 	var err error
 
@@ -155,3 +157,4 @@ func (f *FTD) DeleteAccessRuleSpecial(parent string, n *AccessRule) error {
 
 	return nil
 }
+*/
