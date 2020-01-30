@@ -140,7 +140,7 @@ func (f *FTD) GetAccessPolicies(limit int) ([]*AccessPolicy, error) {
 	return v.Items, nil
 }
 
-func (f *FTD) GetAccessPoliciesby(filterstring string limit int) ([]*AccessPolicy, error) {
+func (f *FTD) GetAccessPoliciesby(filterstring string, limit int) ([]*AccessPolicy, error) {
 	var err error
 
 	filter := make(map[string]string)
