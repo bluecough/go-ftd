@@ -1,5 +1,6 @@
 package goftd
 import (
+	"fmt"
 	"strconv"
 )
 
@@ -34,5 +35,8 @@ func (f *FTD) postDeploy(n *DeployObject, limit int) error {
 	filter["limit"] = strconv.Itoa(limit)
 
 	_, err = f.Post(endpoint, limit)
-	return err
+	if err != nil {
+		fmt.Errorf("error: %s\n", err)
+	}
+	return nil
 }
