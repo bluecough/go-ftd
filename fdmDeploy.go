@@ -1,7 +1,6 @@
 package goftd
 import (
 	"strconv"
-
 )
 
 type DeployObject struct {
@@ -35,5 +34,5 @@ func (f *FTD) postDeploy(n *DeployObject, limit int) error {
 	filter["limit"] = strconv.Itoa(limit)
 
 	_, err = f.Post(endpoint, limit)
-	return nil
+	return err
 }
