@@ -1,4 +1,5 @@
 package goftd
+
 import (
 	"fmt"
 	"strconv"
@@ -38,5 +39,6 @@ func (f *FTD) postDeploy(n *DeployObject, limit int) error {
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
 	}
+
 	return nil
 }
