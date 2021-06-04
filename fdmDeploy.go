@@ -35,5 +35,4 @@ func (f *FTD) postDeploy(n *DeployObject, limit int) error {
 
 	_, err = f.Post(endpoint, limit)
 	return err
-
 }
