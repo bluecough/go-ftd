@@ -17,6 +17,8 @@ const (
 	apiUDPPortObjectsEndpoint   string = "object/udpports"
 	apiPortObjectGroupsEndpoint string = "object/portgroups"
 
+	apiDeploy					string = "operational/deploy"
+
 	// TypeUDPPortObject object type udp port
 	TypeUDPPortObject string = "udpportobject"
 	// TypeTCPPortObject object type tcp port
@@ -39,4 +41,5 @@ const (
 
 	//RuleActionPermit PERMIT
 	RuleActionPermit string = "PERMIT"
+
 )
