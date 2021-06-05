@@ -26,7 +26,7 @@ func (n *DeployObject) Reference() *ReferenceObject {
 
 func (f *FTD) PostDeploy(n *DeployObject) error {
 	var err error
-	_, err = f.Post(apiDeploy, n)
+	_, err = f.Post(apiDeploy, nil)
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
 	}
