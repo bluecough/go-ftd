@@ -9,7 +9,7 @@ type DeployObject struct {
 	ReferenceObject
 	Description     string `json:"description,omitempty"`
 	SubType         string `json:"subType"`
-	Value           string `json:"value"`
+	Value           bool `json:"value"`
 	IsSystemDefined bool   `json:"isSystemDefined,omitempty"`
 	Links           *Links `json:"links,omitempty"`
 }
