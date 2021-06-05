@@ -27,7 +27,7 @@ func (n *DeployObject) Reference() *ReferenceObject {
 }
 
 
-func (f *FTD) postDeploy(n *DeployObject, limit int) error {
+func (f *FTD) PostDeploy(n *DeployObject, limit int) error {
 	var err error
 	n.Type = "deployobject"
 	endpoint := apiDeploy
