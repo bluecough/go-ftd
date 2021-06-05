@@ -7,9 +7,9 @@ import (
 type DeployObject struct {
 	ReferenceObject
 	Description     string `json:"description,omitempty"`
-	SubType         string `json:"subType"`
-	Value           string `json:"value"`
-	IsSystemDefined bool   `json:"isSystemDefined,omitempty"`
+	StatusMessage   string `json:"subType"`
+	CliErrorMessage string `json:"value"`
+	State           string `json:"isSystemDefined,omitempty"`
 	Links           *Links `json:"links,omitempty"`
 }
 
@@ -18,8 +18,6 @@ func (n *DeployObject) Reference() *ReferenceObject {
 	r := ReferenceObject{
 		ID:      n.ID,
 		Name:    n.Name,
-		Version: n.Version,
-		Type:    n.Type,
 	}
 
 	return &r
@@ -28,7 +26,7 @@ func (n *DeployObject) Reference() *ReferenceObject {
 
 func (f *FTD) PostDeploy(n *DeployObject) error {
 	var err error
-	_, err = f.Post(apiDeploy, nil)
+	_, err = f.Post(apiDeploy, n)
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
 	}
