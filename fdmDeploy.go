@@ -27,12 +27,10 @@ func (n *DeployObject) Reference() *ReferenceObject {
 }
 
 
-func (f *FTD) PostDeploy(n *DeployObject) error {
+func (f *FTD) PostDeploy() error {
 	var err error
-	n.Type = "deployobject"
+
 	// adding a comment line to see
-	filter := make(map[string]string)
-	filter["limit"] = strconv.Itoa(limit)
 
 	_, err = f.Post(apiDeploy)
 	if err != nil {
