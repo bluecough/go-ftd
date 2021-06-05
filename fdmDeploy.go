@@ -28,9 +28,6 @@ func (n *DeployObject) Reference() *ReferenceObject {
 
 func (f *FTD) PostDeploy(n *DeployObject) error {
 	var err error
-
-	// adding a comment line to see
-
 	_, err = f.Post(apiDeploy, nil)
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
