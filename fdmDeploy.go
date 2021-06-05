@@ -27,7 +27,7 @@ func (n *DeployObject) Reference() *ReferenceObject {
 }
 
 
-func (f *FTD) PostDeploy() error {
+func (f *FTD) PostDeploy(n *DeployObject) error {
 	var err error
 
 	// adding a comment line to see
