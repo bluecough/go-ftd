@@ -30,12 +30,11 @@ func (n *DeployObject) Reference() *ReferenceObject {
 func (f *FTD) PostDeploy(n *DeployObject, limit int) error {
 	var err error
 	n.Type = "deployobject"
-	endpoint := apiDeploy
 	// adding a comment line to see
 	filter := make(map[string]string)
 	filter["limit"] = strconv.Itoa(limit)
 
-	_, err = f.Post(endpoint, limit)
+	_, err = f.Post(apiDeploy, limit)
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
 	}
