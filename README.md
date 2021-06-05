@@ -1,6 +1,8 @@
 # go-ftd
 
 Go Bindings for [Cisco FirePower NGFW](https://www.cisco.com/c/en/us/products/collateral/security/firepower-ngfw/datasheet-c78-736661.html). These bindings talk to Firepower Device Manager.
+## Added
+This fork of Remi's code now adds the deployment API wrapper
 
 ## Example
 
