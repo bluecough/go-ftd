@@ -32,6 +32,5 @@ func (f *FTD) PostDeploy(n *DeployObject) error {
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
 	}
-
 	return nil
 }
