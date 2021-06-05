@@ -2,7 +2,6 @@ package goftd
 
 import (
 	"fmt"
-	"strconv"
 )
 
 type DeployObject struct {
@@ -32,7 +31,7 @@ func (f *FTD) PostDeploy(n *DeployObject) error {
 
 	// adding a comment line to see
 
-	_, err = f.Post(apiDeploy)
+	_, err = f.Post(apiDeploy, nil)
 	if err != nil {
 		fmt.Errorf("error: %s\n", err)
 	}
