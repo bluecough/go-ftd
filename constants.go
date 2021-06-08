@@ -9,7 +9,7 @@ const (
 	apiDELETE string = "DELETE"
 	apiGET    string = "GET"
 
-	apiBasePath                 string = "api/fdm/v3/"
+	apiBasePath                 string = "api/fdm/v6/"
 	apiTokenEndpoint            string = "fdm/token"
 	apiNetworksEndpoint         string = "object/networks"
 	apiNetworkGroupsEndpoint    string = "object/networkgroups"
